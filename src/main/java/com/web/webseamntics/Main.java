@@ -16,7 +16,8 @@ public class Main {
         Resource johnSmith =
                 model.createResource(personURI)
                         .addProperty(VCARD.FN, fullName);
-// ... build the model
+
+        // ... build the model
         String datasetURL = "http://localhost:3030/territoire";
         String sparqlEndpoint = datasetURL + "/sparql";
         String sparqlUpdate = datasetURL + "/update";
