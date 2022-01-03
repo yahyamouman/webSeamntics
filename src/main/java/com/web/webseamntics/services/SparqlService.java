@@ -55,4 +55,8 @@ public final class SparqlService {
     }
 
 
+    public RDFConnection getConnection() {
+        connect();
+        return conneg;
+    }
 }
