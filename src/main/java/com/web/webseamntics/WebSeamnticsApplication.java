@@ -7,8 +7,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 import java.io.File;
+import java.io.InputStream;
 
 @SpringBootApplication
 public class WebSeamnticsApplication {
@@ -22,9 +25,12 @@ public class WebSeamnticsApplication {
     @Bean
     public CommandLineRunner CommandLineRunnerBean() {
         return (args) -> {
-            System.out.println(getClass().getResource("../../../initData").toString());
-            File file = new File(getClass().getResource("../../../initData").toString());
-            uploadDataService.loadFromUri(file);
+
+            Resource resource = new ClassPathResource("initData");
+            File file = resource.getFile();
+            // Loading data at the start of the app
+            uploadDataService.loadFromUriAndType(file,"ttl");
+
         };
     }
 }

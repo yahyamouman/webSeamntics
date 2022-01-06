@@ -15,12 +15,27 @@ public class UploadDataService {
     @Autowired
     SparqlService sparqlService;
 
+    public void loadFromUriAndType(File file,String type){
+        // if it is a file we load it to the Jena Db
+        if ( ( !file.isDirectory() ) ){
+
+            if ( file.getAbsolutePath().endsWith("."+type) ) {
+                System.out.println("Loading file to Jena Fuseki = "+file.getAbsolutePath());
+                sparqlService.getConnection().load(file.getAbsolutePath());
+            }
+        }
+        // else we loop over files on it
+        else
+            for ( File file1 : file.listFiles() )
+                loadFromUriAndType(file1,type);
+
+    }
     public void loadFromUri(File file){
 
         // if it is a file we load it to the Jena Db
         if ( ( !file.isDirectory() ) ){
             System.out.println("Inside dir = "+file.getAbsolutePath());
-            if ( file.getAbsolutePath().endsWith(".ttl") || file.getAbsolutePath().endsWith(".n3") || file.getAbsolutePath().endsWith(".nt")|| file.getAbsolutePath().endsWith(".rdf")|| file.getAbsolutePath().endsWith(".jsonld"))
+            if ( file.getAbsolutePath().endsWith(".ttl") || file.getAbsolutePath().endsWith(".n3") || file.getAbsolutePath().endsWith(".nt")|| file.getAbsolutePath().endsWith(".rdf"))
                 sparqlService.getConnection().load(file.getAbsolutePath());
 
         }
