@@ -26,10 +26,12 @@ public class WebSeamnticsApplication {
     public CommandLineRunner CommandLineRunnerBean() {
         return (args) -> {
 
-            //Resource resource = new ClassPathResource("initData");
-            //File file = resource.getFile();
+            Resource resource = new ClassPathResource("initData");
+            File file = resource.getFile();
             // Loading data at the start of the app
-            //uploadDataService.loadFromUriAndType(file,"ttl");
+            uploadDataService.loadFromUriAndType(file,"ttl");
+
+
 
         };
     }
