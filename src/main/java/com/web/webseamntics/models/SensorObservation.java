@@ -50,7 +50,7 @@ public class SensorObservation {
 
         return "\n"+"<"+uri+"/"+sensor+"/observations/"+uuid+">  rdf:type   sosa:Observation ;\n" +
                 "  rdfs:label \"observation #"+uuid+"\"@en ;\n" +
-                "  sosa:hasFeatureOfInterest  <"+uri+"> ;\n" +
+                "  sosa:hasFeatureOfInterest  <"+uri+"/> ;\n" +
                 "  sosa:observedProperty  <"+uri+"#"+type+"> ;\n" +
                 "  sosa:madeBySensor <"+uri+"/"+sensor+"> ;\n" +
                 "  sosa:hasResult \""+value+"\"^^xsd:double;\n" +
