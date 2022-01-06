@@ -1,0 +1,553 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rec: <https://w3id.org/rec/asset>.
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+
+#North Coridor
+<https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor/humidity-sensor> rdf:type owl:NamedIndividual,
+                              sosa:Sensor;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#luminosity> .
+
+#S405
+<https://territoire.emse.fr/kg/emse/fayol/4ET/405#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/405#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/405/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/405#temperature>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/405/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/405#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/405> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/405/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/405/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/405#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/405#luminosity> .
+
+#S416
+<https://territoire.emse.fr/kg/emse/fayol/4ET/416#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/416#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/416#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/416/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/416#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/416/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/416#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/416/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/416#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/416> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/416/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/416/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/416/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/416#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/416#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/416#luminosity> .
+
+#S421
+<https://territoire.emse.fr/kg/emse/fayol/4ET/421#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/421/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/421#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/421> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/421/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/421#luminosity> .
+
+
+#S422
+<https://territoire.emse.fr/kg/emse/fayol/4ET/422#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/422#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/422#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/422/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/422#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/422/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/422#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/422/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/422#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/422> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/422/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/422/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/422/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/422#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/422#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/422#luminosity> .
+
+#S423
+<https://territoire.emse.fr/kg/emse/fayol/4ET/423#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/423#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/423/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/423#temperature>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/423/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/423#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/423> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/423/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/423/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/423#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/423#luminosity> .
+
+#S424
+<https://territoire.emse.fr/kg/emse/fayol/4ET/424#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/424#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/424#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/424/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/424#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/424/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/424#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/424/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/424#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/424> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/424/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/424/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/424/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/424#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/424#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/424#luminosity> .
+
+#S425
+<https://territoire.emse.fr/kg/emse/fayol/4ET/425#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/425#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/425#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/425/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/425#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/425/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/425#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/425/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/425#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/425> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/425/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/425/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/425/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/425#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/425#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/425#luminosity> .
+
+#S431F
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431F#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431F#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431F#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431F/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431F/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431F/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431F> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/431F/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/431F/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/431F/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#luminosity> .
+
+#S431H
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431H#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431H#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431H#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431H/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431H/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431H/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/431H> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/431H/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/431H/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/431H/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#luminosity> .
+
+#S432
+<https://territoire.emse.fr/kg/emse/fayol/4ET/432#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/432#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/432#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/432/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/432#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/432/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/432#humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/432/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/4ET/432#luminosity>.
+
+
+<https://territoire.emse.fr/kg/emse/fayol/4ET/432> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/4ET/432/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/432/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/4ET/432/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/4ET/432#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/432#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/4ET/432#luminosity> .
+
+#Fayol
+<https://territoire.emse.fr/kg/emse/fayol> bot:hasSpace <https://territoire.emse.fr/kg/emse/fayol/MOBILE1>,
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2>,
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3>,
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4>,
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5>.
+
+#Mobile1
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE1#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE1#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE1#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE1/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE1/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#humidity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE1/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#luminosity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE1>  rdf:type bot:Space,  owl:NamedIndividual ,
+                sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/MOBILE1/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE1/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE1/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#luminosity> .
+
+
+#MOBILE2
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#temperature> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#humidity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#luminosity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE2>  rdf:type bot:Space, owl:NamedIndividual ,
+                sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/MOBILE2/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE2/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE2/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#luminosity> .
+
+
+#MOBILE3
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#temperature> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#humidity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#luminosity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE3> rdf:type bot:Space, owl:NamedIndividual ,
+                sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/MOBILE3/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE3/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE3/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#luminosity> .
+
+#MOBILE4
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#temperature> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#humidity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#luminosity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE4> rdf:type bot:Space, owl:NamedIndividual ,
+                sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/MOBILE4/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE4/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE4/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#luminosity> .
+
+#MOBILE5
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5#temperature> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5#humidity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5#luminosity> rdf:type owl:NamedIndividual ,
+                       sosa:ObservableProperty .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5/temperature-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#temperature> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5/humidity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#humidity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5/luminosity-sensor> rdf:type owl:NamedIndividual ,
+                              sosa:Sensor ;
+        sosa:observes <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#luminosity> .
+
+<https://territoire.emse.fr/kg/emse/fayol/MOBILE5> rdf:type bot:Space ,  owl:NamedIndividual ,
+                sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/MOBILE5/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE5/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/MOBILE5/luminosity-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#luminosity> .
+
+                        
+<https://territoire.emse.fr/kg/emse/fayol#outside-temperature> rdf:type owl:NamedIndividual ,
+                        sosa:ObservableProperty;
+                        rdfs:label "Outside temperature"@en ;
+                        rdfs:description "Temperature outside of fayol"@en .
+
+<https://territoire.emse.fr/kg/emse/fayol#outside-humidity> rdf:type owl:NamedIndividual ,
+                        sosa:ObservableProperty ;
+                        rdfs:label "Outside humidity"@en ;
+                        rdfs:description "Humidity outside of fayol"@en .
+
+<https://territoire.emse.fr/kg/emse/fayol#outside-pression> rdf:type owl:NamedIndividual ,
+                        sosa:ObservableProperty ;
+                        rdfs:label "Outside pression"@en ;
+                        rdfs:description "Pression outside of fayol"@en .
+
+<https://territoire.emse.fr/kg/emse/fayol/temperature-sensor> rdf:type owl:NamedIndividual , sosa:Sensor ;
+                            rdfs:label "meteociel temperature sensor"@en ;
+                            rdfs:description "Data from www.meteociel.fr of temperature outside of fayol"@en ;
+                            sosa:observes <https://territoire.emse.fr/kg/emse/fayol#outside-temperature>.
+
+<https://territoire.emse.fr/kg/emse/fayol/humidity-sensor> rdf:type owl:NamedIndividual ,  sosa:Sensor ;
+                            rdfs:label "meteociel humidity sensor"@en ;
+                            rdfs:description "Data from www.meteociel.fr of humidity outside of fayol"@en ;
+                            sosa:observes <https://territoire.emse.fr/kg/emse/fayol#outside-humidity>.
+
+<https://territoire.emse.fr/kg/emse/fayol/pression-sensor> rdf:type owl:NamedIndividual , sosa:Sensor ;
+                            rdfs:label "meteociel pression sensor"@en ;
+                            rdfs:description "Data from www.meteociel.fr of pression outside of fayol"@en ;
+                            sosa:observes <https://territoire.emse.fr/kg/emse/fayol#outside-pression>.
+
+<https://territoire.emse.fr/kg/emse/fayol/> rdf:type owl:NamedIndividual ,
+                  sosa:FeatureOfInterest ;
+        bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/temperature-sensor> ,
+                            <https://territoire.emse.fr/kg/emse/fayol/humidity-sensor>,
+                            <https://territoire.emse.fr/kg/emse/fayol/pression-sensor>;
+
+        ssn:hasProperty <https://territoire.emse.fr/kg/emse/fayol#outside-temperature> ,
+                        <https://territoire.emse.fr/kg/emse/fayol#outside-humidity>,
+                        <https://territoire.emse.fr/kg/emse/fayol#outside-pression>.
+
+<https://territoire.emse.fr/kg/emse/> org::hasSite <https://territoire.emse.fr/kg/emse/fayol/>.

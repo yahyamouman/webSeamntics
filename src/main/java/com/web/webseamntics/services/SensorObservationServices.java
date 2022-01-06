@@ -40,7 +40,7 @@ public class SensorObservationServices {
     }
 
     public void measurementsCsvToObservations(String file) throws Exception {
-        String exportFile = new File("./src/main/resources/export/RDFMeasurements.ttl").getCanonicalPath();
+        String exportFile = new File("./src/main/resources/export/RDFMeasurements-"+UUID.randomUUID()+".ttl").getCanonicalPath();
 
         try {
             File myObj = new File(exportFile);
