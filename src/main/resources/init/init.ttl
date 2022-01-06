@@ -12,7 +12,7 @@
 
 #North Coridor
 <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/north-corridor#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -45,7 +45,7 @@
 
 #S405
 <https://territoire.emse.fr/kg/emse/fayol/4ET/405#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/405#luminosity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -70,7 +70,7 @@
 
 #S416
 <https://territoire.emse.fr/kg/emse/fayol/4ET/416#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/416#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -119,7 +119,7 @@
 
 #S422
 <https://territoire.emse.fr/kg/emse/fayol/4ET/422#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/422#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -152,7 +152,7 @@
 
 #S423
 <https://territoire.emse.fr/kg/emse/fayol/4ET/423#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/423#luminosity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -177,7 +177,7 @@
 
 #S424
 <https://territoire.emse.fr/kg/emse/fayol/4ET/424#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/424#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -210,7 +210,7 @@
 
 #S425
 <https://territoire.emse.fr/kg/emse/fayol/4ET/425#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/425#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -243,7 +243,7 @@
 
 #S431F
 <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/431F#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -276,7 +276,7 @@
 
 #S431H
 <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/431H#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -309,7 +309,7 @@
 
 #S432
 <https://territoire.emse.fr/kg/emse/fayol/4ET/432#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/432#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -349,7 +349,7 @@
 
 #Mobile1
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE1#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -382,7 +382,7 @@
 
 #MOBILE2
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE2#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -415,7 +415,7 @@
 
 #MOBILE3
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE3#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -447,7 +447,7 @@
 
 #MOBILE4
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE4#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -479,7 +479,7 @@
 
 #MOBILE5
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#temperature> rdf:type owl:NamedIndividual ,
-                       sosa:ObservableProperty .
+                       sosa:ObservableProperty, seas:TemperatureProperty .
 
 <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#humidity> rdf:type owl:NamedIndividual ,
                        sosa:ObservableProperty .
@@ -509,7 +509,7 @@
                         <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#humidity>,
                         <https://territoire.emse.fr/kg/emse/fayol/MOBILE5#luminosity> .
 
-                        
+
 <https://territoire.emse.fr/kg/emse/fayol#outside-temperature> rdf:type owl:NamedIndividual ,
                         sosa:ObservableProperty;
                         rdfs:label "Outside temperature"@en ;
@@ -540,7 +540,7 @@
                             rdfs:description "Data from www.meteociel.fr of pression outside of fayol"@en ;
                             sosa:observes <https://territoire.emse.fr/kg/emse/fayol#outside-pression>.
 
-<https://territoire.emse.fr/kg/emse/fayol/> rdf:type owl:NamedIndividual ,
+<https://territoire.emse.fr/kg/emse/fayol> rdf:type owl:NamedIndividual ,
                   sosa:FeatureOfInterest ;
         bot:containsElement <https://territoire.emse.fr/kg/emse/fayol/temperature-sensor> ,
                             <https://territoire.emse.fr/kg/emse/fayol/humidity-sensor>,
@@ -550,4 +550,4 @@
                         <https://territoire.emse.fr/kg/emse/fayol#outside-humidity>,
                         <https://territoire.emse.fr/kg/emse/fayol#outside-pression>.
 
-<https://territoire.emse.fr/kg/emse/> org::hasSite <https://territoire.emse.fr/kg/emse/fayol/>.
+<https://territoire.emse.fr/kg/emse/> org:hasSite <https://territoire.emse.fr/kg/emse/fayol/>.

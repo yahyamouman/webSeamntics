@@ -57,7 +57,7 @@ public class SensorObservationServices {
         FileWriter fw = new FileWriter(exportFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.\n" +
-                "@prefix xsd: <http://www.w3.org/2001/XMLSchema>.\n" +
+                "@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.\n" +
                 "@prefix seas:  <https://w3id.org/seas/>.\n" +
                 "@prefix bot:   <https://w3id.org/bot#>.\n" +
                 "@prefix owl:   <http://www.w3.org/2002/07/owl#>.\n" +
@@ -76,7 +76,6 @@ public class SensorObservationServices {
             String [] x;
             String[] header = reader.readNext(); //remove header
             while ((x = reader.readNext()) != null) {
-                if(x.length<9) {
                     String epochTime = x[1];
 
                     // get all dates for scraping
@@ -144,7 +143,7 @@ public class SensorObservationServices {
                         //allObservations.add(obs);
                         bw.write(obs.toTtl());
                     }
-                }
+
 
             }
         } catch (IOException | CsvException e) {
