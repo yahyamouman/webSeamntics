@@ -2,6 +2,7 @@ package com.web.webseamntics;
 
 import com.opencsv.exceptions.CsvException;
 import com.web.webseamntics.services.SensorObservationServices;
+import com.web.webseamntics.services.UploadDataService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,13 +16,13 @@ public class CsvTest {
 
     @Autowired
     SensorObservationServices sensorObservationServices;
-
+    @Autowired
+    UploadDataService uploadDataService;
 
     @Test
-    public void csvToTurtleTest() throws IOException, CsvException {
+    public void csvToTurtleTest() throws Exception {
         String fileName = "C:\\Users\\yahya\\IdeaProjects\\webSeamntics\\src\\main\\resources\\static\\sensorData\\20211116-daily-sensor-measures.csv";
         sensorObservationServices.measurementsCsvToObservations(fileName);
-
         /*String exportFile = "C:\\Users\\yahya\\IdeaProjects\\webSeamntics\\src\\main\\resources\\static\\sensorData\\export.ttl";
 
         try {

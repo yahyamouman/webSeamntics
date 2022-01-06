@@ -30,6 +30,14 @@ public class UploadDataService {
                 loadFromUriAndType(file1,type);
 
     }
+    public void loadFromPath(String path){
+
+        // if it is a file we load it to the Jena Db
+        File file = new File(path);
+            System.out.println("Inside dir = "+file.getAbsolutePath());
+            if ( file.getAbsolutePath().endsWith(".ttl") || file.getAbsolutePath().endsWith(".n3") || file.getAbsolutePath().endsWith(".nt")|| file.getAbsolutePath().endsWith(".rdf"))
+                sparqlService.getConnection().load(file.getAbsolutePath());
+    }
     public void loadFromUri(File file){
 
         // if it is a file we load it to the Jena Db

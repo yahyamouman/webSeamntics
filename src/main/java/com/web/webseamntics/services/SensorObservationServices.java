@@ -15,6 +15,9 @@ public class SensorObservationServices {
     @Autowired
     WebScrapingServices webScrapingServices;
 
+    @Autowired
+    UploadDataService uploadDataService;
+
     public static Calendar epochToCalendar(String epochString) {
         double epoch = Double.parseDouble(epochString);
 
@@ -36,8 +39,8 @@ public class SensorObservationServices {
 
     }
 
-    public void measurementsCsvToObservations(String file) throws IOException, CsvException {
-        String exportFile = "C:\\Users\\yahya\\IdeaProjects\\webSeamntics\\src\\main\\resources\\static\\sensorData\\export.ttl";
+    public void measurementsCsvToObservations(String file) throws Exception {
+        String exportFile = new File("./src/main/resources/export/RDFMeasurements.ttl").getCanonicalPath();
 
         try {
             File myObj = new File(exportFile);
@@ -53,89 +56,99 @@ public class SensorObservationServices {
         //allObservations.add(obs);
         FileWriter fw = new FileWriter(exportFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
+        bw.write("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.\n" +
+                "@prefix xsd: <http://www.w3.org/2001/XMLSchema>.\n" +
+                "@prefix seas:  <https://w3id.org/seas/>.\n" +
+                "@prefix bot:   <https://w3id.org/bot#>.\n" +
+                "@prefix owl:   <http://www.w3.org/2002/07/owl#>.\n" +
+                "@prefix sosa: <http://www.w3.org/ns/sosa/>.\n" +
+                "@prefix ssn: <http://www.w3.org/ns/ssn/>.\n" +
+                "@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.\n" +
+                "@prefix rec: <https://w3id.org/rec/asset>.\n" +
+                "@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/>.\n");
 
         ArrayList<SensorObservation> allObservations = new ArrayList<>();
 
         HashSet<String> datesToScrap = new HashSet<>();
 
         try (CSVReader reader = new CSVReader(new FileReader(file))) {
-            List<String[]> r = reader.readAll();
-            String[] headers = r.get(0);
-            r.remove(0);
-            for(String[] x:r){
-                String epochTime = x[1];
 
-                // get all dates for scraping
-                Calendar calendar = epochToCalendar(epochTime);
-                String day = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
-                String month = String.valueOf(calendar.get(Calendar.MONTH));
-                String year = String.valueOf(calendar.get(Calendar.YEAR));
-                String date = year + "-" + month + "-" + day;
-                datesToScrap.add(date);
+            String [] x;
+            String[] header = reader.readNext(); //remove header
+            while ((x = reader.readNext()) != null) {
+                if(x.length<9) {
+                    String epochTime = x[1];
 
-                String value ="";
-                String uri ="";
-                String type ="";
-                String sensor ="";
-                String xsdDate ="";
+                    // get all dates for scraping
+                    Calendar calendar = epochToCalendar(epochTime);
+                    String day = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
+                    String month = String.valueOf(calendar.get(Calendar.MONTH));
+                    String year = String.valueOf(calendar.get(Calendar.YEAR));
+                    String date = year + "-" + month + "-" + day;
+                    datesToScrap.add(date);
 
-                //use the current line to create an observation object and add it to observations list
-                xsdDate=epochToXsdDateTime(x[1]);
-                uri=x[9];
-                if(!x[2].equals("")){
-                    value=x[2];
-                    type="humidity";
-                    sensor="humidity-sensor";
-                    SensorObservation obs = new SensorObservation(value,uri,type,sensor,xsdDate);
-                    //allObservations.add(obs);
-                    bw.write(obs.toTtl());
-                }
-                if(!x[3].equals("")) {
-                    value = x[3];
-                    type = "luminosity";
-                    sensor = "luminosity-sensor";
-                    SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
-                    //allObservations.add(obs);
-                    bw.write(obs.toTtl());
-                }
-                if(!x[4].equals("")) {
-                    value = x[4];
-                    type = "SND";
-                    sensor = "SND-sensor";
-                    SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
-                    //allObservations.add(obs);
-                    bw.write(obs.toTtl());
-                }
-                if(!x[5].equals("")) {
-                    value = x[5];
-                    type = "SDNF";
-                    sensor = "SNDF-sensor";
-                    SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
-                    //allObservations.add(obs);
-                    bw.write(obs.toTtl());
-                }
-                if(!x[6].equals("")) {
-                    value = x[6];
-                    type = "SNDM";
-                    sensor = "SNDM-sensor";
-                    SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
-                    //allObservations.add(obs);
-                    bw.write(obs.toTtl());
-                }
-                if(!x[7].equals("")){
-                    value=x[7];
-                    type="temperature";
-                    sensor="temperature-sensor";
-                    SensorObservation obs = new SensorObservation(value,uri,type,sensor,xsdDate);
-                    //allObservations.add(obs);
-                    bw.write(obs.toTtl());
+                    String value = "";
+                    String uri = "";
+                    String type = "";
+                    String sensor = "";
+                    String xsdDate = "";
+
+                    //use the current line to create an observation object and add it to observations list
+                    xsdDate = epochToXsdDateTime(x[1]);
+                    uri = x[9];
+                    if (!x[2].equals("")) {
+                        value = x[2];
+                        type = "humidity";
+                        sensor = "humidity-sensor";
+                        SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
+                        //allObservations.add(obs);
+                        bw.write(obs.toTtl());
+                    }
+                    if (!x[3].equals("")) {
+                        value = x[3];
+                        type = "luminosity";
+                        sensor = "luminosity-sensor";
+                        SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
+                        //allObservations.add(obs);
+                        bw.write(obs.toTtl());
+                    }
+                    if (!x[4].equals("")) {
+                        value = x[4];
+                        type = "SND";
+                        sensor = "SND-sensor";
+                        SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
+                        //allObservations.add(obs);
+                        bw.write(obs.toTtl());
+                    }
+                    if (!x[5].equals("")) {
+                        value = x[5];
+                        type = "SDNF";
+                        sensor = "SNDF-sensor";
+                        SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
+                        //allObservations.add(obs);
+                        bw.write(obs.toTtl());
+                    }
+                    if (!x[6].equals("")) {
+                        value = x[6];
+                        type = "SNDM";
+                        sensor = "SNDM-sensor";
+                        SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
+                        //allObservations.add(obs);
+                        bw.write(obs.toTtl());
+                    }
+                    if (!x[7].equals("")) {
+                        value = x[7];
+                        type = "temperature";
+                        sensor = "temperature-sensor";
+                        SensorObservation obs = new SensorObservation(value, uri, type, sensor, xsdDate);
+                        //allObservations.add(obs);
+                        bw.write(obs.toTtl());
+                    }
                 }
 
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException | CsvException e) {
-            e.printStackTrace();
+            throw new Exception();
         }
 
         //loop over outsideObservations set and convert to ttl
@@ -146,6 +159,7 @@ public class SensorObservationServices {
         }
         bw.close();
 
+        uploadDataService.loadFromPath(exportFile);
     }
 
     public void writeToFile(SensorObservation sensorObservation,String fileName){
